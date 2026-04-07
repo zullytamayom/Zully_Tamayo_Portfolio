@@ -14,7 +14,7 @@ const proyectos = [
     {
         titulo: "💡 SocialMeli",
         tag: "Backend Experience",
-        desc: "Red social desarrollada en equipo para el Bootcamp MELI. Migrando de memoria a MySQL.",
+        desc: "Red social desarrollada en equipo para MELI. Migrando de memoria a MySQL.",
         tech: "Java, Spring Boot, Angular"
     },
     {
@@ -25,22 +25,21 @@ const proyectos = [
     }
 ];
 
-function cargarProyectos() {
+document.addEventListener('DOMContentLoaded', () => {
     const contenedor = document.getElementById('lista-proyectos');
-    
-    proyectos.forEach(p => {
-        const html = `
-            <div class="col-md-6 col-lg-3">
-                <div class="p-4 glass-card d-flex flex-direction-column">
-                    <span class="small text-primary mb-2 d-block">${p.tag}</span>
-                    <h3 class="h5 mb-3">${p.titulo}</h3>
-                    <p class="small opacity-75 flex-grow-1">${p.desc}</p>
-                    <p class="mt-3 text-secondary x-small" style="font-size: 0.8rem;">${p.tech}</p>
+    if (contenedor) {
+        proyectos.forEach(p => {
+            const card = `
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card d-flex flex-column h-100">
+                        <span class="small text-primary mb-2 d-block fw-bold">${p.tag}</span>
+                        <h3 class="h5 mb-3 text-white">${p.titulo}</h3>
+                        <p class="small opacity-75 flex-grow-1">${p.desc}</p>
+                        <p class="mt-3 text-secondary" style="font-size: 0.8rem;"><strong>Stack:</strong> ${p.tech}</p>
+                    </div>
                 </div>
-            </div>
-        `;
-        contenedor.innerHTML += html;
-    });
-}
-
-document.addEventListener('DOMContentLoaded', cargarProyectos);
+            `;
+            contenedor.innerHTML += card;
+        });
+    }
+});
