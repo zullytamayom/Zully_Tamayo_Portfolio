@@ -7,10 +7,14 @@ Bienvenido al repositorio de mi portafolio personal. Este proyecto es mi carta d
 Para la concepción de este portafolio, definí una identidad basada en la lógica, el esfuerzo y la modernidad tecnológica. Mi inspiración combina el "Dark Mode" con acentos vibrantes que representan la energía del código.
 
 > **Puedes ver mi proceso de inspiración aquí:**
-> ![Mi Moodboard de Inspiración](./assets/moodBoard.jpeg)
+> ![Mi Moodboard de Inspiración](./assets/zully-moodBoard.jpeg)
+
+
+## 🌐 Despliegue
+Puedes ver la versión en vivo de mi portafolio aquí:
+🔗 [https://phenomenal-eclair-9360d4.netlify.app/](https://phenomenal-eclair-9360d4.netlify.app/)
 
 ## 🚀 Sobre el Proyecto
-
 Este portafolio fue diseñado con un enfoque "Dark Mode" minimalista y profesional, utilizando una paleta de colores oscuros con acentos en cian para reflejar un entorno tecnológico puro.
 
 ### 🛠️ Tecnologías utilizadas en este sitio:
