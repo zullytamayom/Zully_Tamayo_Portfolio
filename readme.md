@@ -33,9 +33,30 @@ Para la concepción de este portafolio, definí una identidad basada en la lógi
 ---
 
 ## 📁 Proyectos Destacados
-1.  **Historias de Café:** Plataforma digital que conecta a productores regionales de café con mercados globales.
-2.  **ABC Challenge:** Aplicación interactiva de aprendizaje infantil (Flashcards) desarrollada con JS Vanilla y Bootstrap.
-3.  **Integración HubSpot-PostgreSQL:** Script en Python para la automatización de flujos de trabajo y analítica en Looker Studio.
+
+1. **☕ Historias de Café [En Desarrollo]**
+   *Plataforma digital de impacto social para el sector cafetero.*
+   * **Propósito:** Conectar a productores regionales con mercados globales, eliminando intermediarios y resaltando la excelencia del café local.
+   * **Tecnologías:** Maquetación avanzada con HTML5, CSS3 y diseño responsivo enfocado en la experiencia del usuario (UX).
+
+2. **🔤 ABC Challenge [En Desarrollo]**
+   *Aplicación interactiva de aprendizaje infantil (Flashcards).*
+   * **Funcionalidad:** Sistema de tarjetas didácticas con filtros dinámicos por tipo de letra (vocales/consonantes) y contador de progreso en tiempo real.
+   * **Tecnologías:** JavaScript Vanilla para la lógica de estados, Bootstrap 5 para el diseño y CSS nativo para efectos de animación 3D (giro de cartas).
+
+
+3. **💡 SocialMeli (Bootcamp Mercado Libre)**
+   *Proyecto colaborativo desarrollado en un equipo de **6 personas**.*
+   * **Trayectoria Multi-lenguaje:** Tras una inmersión inicial en **Java/Spring Boot**, mi camino profesional se expandió hacia un proyecto productivo en **Go (Golang)**, desarrollando una visión agnóstica del desarrollo backend.
+   * **Fortalecimiento en Generation:** Actualmente consolido las bases de lógica y **JavaScript** como pilar para mi próxima especialización en el ecosistema **Java Enterprise**.
+   * **Evolución:** Como iniciativa personal, estoy desarrollando la interfaz en **Angular** y planeando la migración de arquitectura (de memoria a **MySQL**) mediante **JPA/Hibernate**.
+
+4. **📊 Integración HubSpot-PostgreSQL**
+   *Script de automatización y analítica de datos desarrollado en Equitel.*
+   * **Logro:** Automatización de flujos de trabajo mediante la extracción de datos de HubSpot para su procesamiento y carga en **PostgreSQL**.
+   * **Impacto:** Visualización estratégica de KPIs mediante la conexión con **Looker Studio**, optimizando la toma de decisiones basada en datos.
+   * **Tecnologías:** Python, SQL, APIs REST.
+
 
 ---
 
