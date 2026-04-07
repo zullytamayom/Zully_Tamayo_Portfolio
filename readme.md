@@ -46,7 +46,7 @@ Puedes ver la versión en vivo de mi portafolio aquí:
 ---
 
 ## 📫 Contacto
-* **LinkedIn:** [Tu Perfil de LinkedIn](https://www.linkedin.com/in/zully-tamayo-martinez/)
+* **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/zully-tamayo-martinez-softwaredeveloper/)
 * **GitHub:** [@ZullyTamayoM](https://github.com/ZullyTamayoM)
 
 ---
