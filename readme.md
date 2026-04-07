@@ -2,6 +2,13 @@
 
 Bienvenido al repositorio de mi portafolio personal. Este proyecto es mi carta de presentación como **Desarrolladora Backend**, donde destaco mi experiencia en el diseño de APIs robustas, lógica de negocio y arquitecturas escalables.
 
+
+## 🎨 ADN Visual (Moodboard)
+Para la concepción de este portafolio, definí una identidad basada en la lógica, el esfuerzo y la modernidad tecnológica. Mi inspiración combina el "Dark Mode" con acentos vibrantes que representan la energía del código.
+
+> **Puedes ver mi proceso de inspiración aquí:**
+> ![Mi Moodboard de Inspiración](./assets/moodBoard.jpeg)
+
 ## 🚀 Sobre el Proyecto
 
 Este portafolio fue diseñado con un enfoque "Dark Mode" minimalista y profesional, utilizando una paleta de colores oscuros con acentos en cian para reflejar un entorno tecnológico puro.
