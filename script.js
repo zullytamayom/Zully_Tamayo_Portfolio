@@ -22,6 +22,11 @@ const proyectos = [
         tag: "Data & Automation",
         desc: "Automatización de flujos de trabajo y carga de datos en PostgreSQL para Looker Studio.",
         tech: "Python, SQL, APIs"
+    },{
+        titulo: "🚀 Starbound",
+        tag: "Frontend & UI/UX",
+        desc: "E-commerce intergaláctico con interfaz futurista y minimalista desarrollada para la Hackathon 1.",
+        tech: "JavaScript | HTML5 | CSS3 | Bootstrap"
     }
 ];
 

@@ -9,12 +9,10 @@ body {
     color: #ffffff !important;
     font-family: 'Inter', sans-serif;
     margin: 0;
-    
-    /* ESTO ES LO QUE BUSCAS: Luces de ambiente Púrpura y Azul */
     background-image: 
         radial-gradient(circle at 10% 20%, rgba(106, 17, 203, 0.15) 0%, transparent 40%), /* Luz Púrpura arriba izq */
         radial-gradient(circle at 90% 80%, rgba(37, 117, 252, 0.15) 0%, transparent 40%); /* Luz Azul abajo der */
-    background-attachment: fixed; /* Para que las luces te sigan al hacer scroll */
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
@@ -40,7 +38,7 @@ body {
 }
 
 h1 {
-    font-size: clamp(3rem, 8vw, 5rem); /* Se ajusta solo al tamaño de pantalla */
+    font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 800;
     background: linear-gradient(90deg, #6a11cb, #2575fc);
     -webkit-background-clip: text;
@@ -83,8 +81,8 @@ section {
 }
 
 .glass-card:hover {
-    border-color: #6a11cb; /* Púrpura al pasar el mouse */
-    box-shadow: 0 0 20px rgba(106, 17, 203, 0.3); /* Resplandor púrpura */
+    border-color: #6a11cb; 
+    box-shadow: 0 0 20px rgba(106, 17, 203, 0.3); 
     transform: translateY(-10px);
 }
 
