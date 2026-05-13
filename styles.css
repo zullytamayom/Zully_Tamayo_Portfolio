@@ -177,3 +177,32 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+/* Borde con degradado para la tarjeta de reflexión */
+.border-gradient {
+    border: 2px solid transparent !important;
+    background-image: linear-gradient(var(--bg-dark), var(--bg-dark)), 
+                      linear-gradient(45deg, #6a11cb, #2575fc);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.bg-white-5 {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.bg-white-5:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--secondary);
+}
+
+.reflection-content p {
+    line-height: 1.8;
+}
+
+.reflection-content ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
