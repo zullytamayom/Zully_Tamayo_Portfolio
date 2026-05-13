@@ -1,99 +1,179 @@
 :root {
-    --primary: #6a11cb;
-    --secondary: #2575fc;
-    --dark-bg: #050505;
+    --primary: #8a2be2; /* Púrpura Eléctrico */
+    --secondary: #00d2ff; /* Azul Neón */
+    --bg-dark: #0a0a0a;
+    --bg-soft: #121212;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 body {
-    background-color: #050505 !important; /* Negro Profundo de base */
-    color: #ffffff !important;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(106, 17, 203, 0.15) 0%, transparent 40%), /* Luz Púrpura arriba izq */
-        radial-gradient(circle at 90% 80%, rgba(37, 117, 252, 0.15) 0%, transparent 40%); /* Luz Azul abajo der */
-    background-attachment: fixed;
-    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
 }
 
+/* --- Navbar --- */
 .navbar {
-    background: rgba(5, 5, 5, 0.9) !important;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 1rem 2rem;
+    background: rgba(10, 10, 10, 0.8) !important;
+    backdrop-filter: blur(15px);
+    transition: 0.3s;
 }
 
-.navbar-brand span { color: var(--secondary); }
+.dot { color: var(--secondary); }
 
+.nav-link {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.btn-contact {
+    background: white;
+    color: black !important;
+    padding: 8px 20px !important;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/* --- Hero --- */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: radial-gradient(circle at top right, rgba(106, 17, 203, 0.15), transparent),
-                radial-gradient(circle at bottom left, rgba(37, 117, 252, 0.15), transparent);
-    padding: 100px 20px;
-    padding-top: 100px;
+    padding: 180px 0 100px;
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.1), transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(0, 210, 255, 0.1), transparent 40%);
 }
 
-h1 {
-    font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 800;
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
+.fw-extrabold { font-weight: 800; }
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
+    font-weight: 800;
 }
 
+/* --- Buttons --- */
+.btn-main {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 14px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+}
+
+/* --- Cards --- */
 .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2rem;
-    height: 100%;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s ease;
 }
 
 .glass-card:hover {
-    transform: translateY(-12px);
-    background: rgba(255, 255, 255, 0.07);
-    border-color: var(--primary);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: rgba(138, 43, 226, 0.4);
+    background: rgba(255, 255, 255, 0.05);
 }
 
-section {
-    padding: 100px 0;
+.skill-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin: 5px;
+    transition: 0.3s;
 }
 
-.bg-darker {
-    background-color: #080808;
+.skill-tag:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
 }
 
-.btn-primary {
-    background: linear-gradient(45deg, var(--primary), var(--secondary)) !important;
-    border: none !important;
-    padding: 12px 35px !important;
-    border-radius: 50px !important;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* --- Profile Img --- */
+.profile-container {
+    position: relative;
+    display: inline-block;
 }
 
-.glass-card:hover {
-    border-color: #6a11cb; 
-    box-shadow: 0 0 20px rgba(106, 17, 203, 0.3); 
-    transform: translateY(-10px);
+.profile-container::after {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    opacity: 0.3;
 }
 
 .profile-img {
-  border-radius: 50%;
-  object-fit: cover;
-  width: 280px;
-  height: 280px;
-  margin: 30px auto 0;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--bg-soft);
+    animation: float 6s ease-in-out infinite;
 }
 
-.profile-img:hover {
-  transform: scale(1.05);
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* --- Utils --- */
+.section-padding { padding: 120px 0; }
+.bg-black-soft { background-color: var(--bg-soft); }
+.email-link {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+.email-link:hover { color: var(--secondary); }
+.hover-up:hover {
+    transform: translateY(-5px);
+    color: var(--primary) !important;
+}
+
+/* Indicador de proyecto en vivo */
+.text-success {
+    color: #00ff88 !important;
+    font-weight: bold;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Mejorar el botón del proyecto destacado */
+.glass-card .btn-main {
+    font-size: 0.8rem;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.bi-cup-hot, .bi-rocket-takeoff, .bi-database-gear {
+    filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.4));
+}
+
+.text-success {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }

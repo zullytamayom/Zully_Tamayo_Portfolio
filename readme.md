@@ -70,5 +70,3 @@ Puedes ver la versión en vivo de mi portafolio aquí:
 * **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/zully-tamayo-martinez-softwaredeveloper/)
 * **GitHub:** [@ZullyTamayoM](https://github.com/ZullyTamayoM)
 
----
-*Hecho con 100% trabajo y 0% suerte.*
