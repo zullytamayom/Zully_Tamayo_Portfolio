@@ -9,6 +9,15 @@ const proyectos = [
         icono: "bi-cup-hot" // Icono de taza
     },
     {
+        titulo: "API REST Spring Boot",
+        descripcion: "API REST desarrollada con Spring Boot, con seguridad JWT y persistencia en base de datos relacional PostgreSQL(Supabase).",
+        tech: ["Java", "Spring Boot", "PostreSQL", "JWT"],
+        link: "https://e-commerce-historias-de-cafe-backend-3c6t.onrender.com/swagger-ui/index.html#/",
+        github: "https://github.com/ZullyTamayoM",
+        destacado: false,
+        icono: "bi-database-fill-gear"
+    },
+    {
         titulo: "Viaje Espacial",
         descripcion: "Explorador interactivo de misiones espaciales. Consume datos astronómicos para visualizar información sobre el cosmos de forma dinámica.",
         tech: ["JavaScript", "HTML5", "CSS3", "GitHub Pages"],
@@ -16,15 +25,6 @@ const proyectos = [
         github: "https://github.com/zullytamayom/ViajeEspacial",
         destacado: false,
         icono: "bi-rocket-takeoff" // Icono de cohete
-    },
-    {
-        titulo: "API REST Spring Boot",
-        descripcion: "Sistema de gestión de inventarios con seguridad JWT y persistencia en base de datos relacional PostgreSQL.",
-        tech: ["Java", "Spring Boot", "PostreSQL", "JWT"],
-        link: "#", // Sin demo
-        github: "https://github.com/ZullyTamayoM",
-        destacado: false,
-        icono: "bi-database-fill-gear" // Icono de base de datos/config
     }
 ];
 
