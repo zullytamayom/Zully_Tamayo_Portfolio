@@ -1,9 +1,9 @@
 const proyectos = [
     {
         titulo: "Historias de café",
-        descripcion: "Plataforma premium de café de origen. Incluye carrito de compras con funcionalidad de pasarela de pagos de Mercado Pago realizada con Spring Boot, gestión de usuarios con LocalStorage y catálogo dinámico.",
-        tech: ["Vue.js", "Spring Boot", "Mercado Pago", "Render"],
-        link: "https://proyecto-historiasdecafe-frontend-vue-1.onrender.com/catalogo",
+        descripcion: "Plataforma premium de café de origen. Incluye carrito de compras con funcionalidad de pasarela de pagos de Mercado Pago realizada con Spring Boot, gestión de usuarios con persistencia en PostgreSQL y catálogo dinámico.",
+        tech: ["Vanilla JS", "HTML5", "CSS3", "JavaScript", "Spring Boot", "Mercado Pago", "Render","Supabase","PostgreSQL"],
+        link: "https://e-commerce-historias-de-cafe-frontend-r0cz.onrender.com/pages/home/home.html",
         github: "https://github.com/ZullyTamayoM",
         destacado: true,
         icono: "bi-cup-hot" // Icono de taza
