@@ -122,6 +122,13 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .proj .meta em{font-style:normal;color:var(--blue)}
 @media(max-width:700px){.projects{grid-template-columns:1fr}}
 
+.proj .acts{display:flex;gap:18px;font-weight:600;font-size:.95rem}
+.proj .acts a{color:var(--blue);text-decoration:none;border-bottom:2px solid transparent}
+.proj .acts a:hover{border-color:var(--blue)}
+.proj.feat{grid-column:1/-1;border-color:var(--blue);box-shadow:inset 4px 0 0 var(--blue)}
+.proj.feat p{max-width:70ch}
+.proj:hover{transform:none}
+
 /* contacto */
 .contact{background:var(--night);color:#fff;border:0}
 .contact h2{font-size:clamp(2rem,4.6vw,3.4rem);max-width:18ch}
@@ -152,7 +159,7 @@ footer{background:var(--night);color:#7F91AE;font-size:.85rem;padding:0 0 32px}
 <header class="hero" id="top"><div class="wrap">
   <div>
     <p class="status"><i></i>Disponible para nuevos retos en Bogotá, híbrido o remoto</p>
-    <h1>Software backend que aguanta tráfico real.</h1>
+    <h1>Software backend y entusiasta en Angular</h1>
     <p class="sub">Soy ingeniera informática y desarrolladora Backend / Full Stack. En Mercado Libre ayudé a pasar un monolito a microservicios en Go. Hoy sumo Java, Spring Boot, Angular y certificaciones en AWS y Azure.</p>
     <div class="btns">
       <a class="btn p" href="#proyectos">Ver proyectos</a>
@@ -186,13 +193,13 @@ footer{background:var(--night);color:#7F91AE;font-size:.85rem;padding:0 0 32px}
     <h2>Construyo para que escale y se pueda mantener</h2>
     <p>Empecé con curiosidad por entender cómo funcionan los sistemas grandes. Pasé por Mercado Libre, donde diseñé APIs REST de alta concurrencia, trabajé con despliegues automatizados sobre AWS y vigilé latencia y salud de los servicios.</p>
     <p>Antes automaticé pipelines de datos en Equitel (Python, S3, Glue, Aurora, Looker Studio) y desarrollé en Java y Angular en Teradata. Desde noviembre de 2025 me preparo para mi siguiente rol: completé Generation Colombia (Full Stack) y AWS re/Start, y aprobé AZ-900 y AWS Cloud Practitioner.</p>
-    <p>Trabajo en equipo con SCRUM y Jira, y aprendo rápido. Inglés B1, con ganas de seguir mejorándolo.</p>
+    <p>Trabajo en equipo con SCRUM y Jira, y aprendo rápido. Inglés B2(en curso).</p>
   </div>
 </div></section>
 
 <section id="experiencia"><div class="wrap">
   <h2>Experiencia</h2>
-  <p class="lede">Cuatro años en producto, datos e infraestructura, de startups a una de las mayores plataformas de Latinoamérica.</p>
+  <p class="lede">Alrededor de 3 años en producto, datos e infraestructura, de startups a una de las mayores plataformas de Latinoamérica.</p>
 
   <article class="job">
     <div class="when">Nov 2024 – Oct 2025</div>
@@ -251,7 +258,7 @@ footer{background:var(--night);color:#7F91AE;font-size:.85rem;padding:0 0 32px}
     <div class="grp"><h3>Cloud y DevOps</h3><div class="tags"><span>AWS: EC2, S3, RDS, Glue, Aurora</span><span>Azure</span><span>Docker</span><span>CI/CD</span><span>Git</span></div></div>
     <div class="grp"><h3>Bases de datos y datos</h3><div class="tags"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Aurora</span><span>ETL</span><span>Looker Studio</span></div></div>
     <div class="grp"><h3>IA para desarrollo</h3><div class="tags"><span>Cursor</span><span>Windsurf</span><span>GitHub Copilot</span><span>Kiro</span><span>IA Studio</span></div></div>
-    <div class="grp"><h3>Metodología</h3><div class="tags"><span>SCRUM</span><span>Jira</span><span>Trabajo en equipo</span><span>Inglés B1</span></div></div>
+    <div class="grp"><h3>Metodología</h3><div class="tags"><span>SCRUM</span><span>Jira</span><span>Trabajo en equipo</span><span>Inglés B2 (en curso)</span></div></div>
   </div>
 </div></section>
 
@@ -274,18 +281,38 @@ footer{background:var(--night);color:#7F91AE;font-size:.85rem;padding:0 0 32px}
   <h2>Proyectos</h2>
   <p class="lede">Una selección de mi GitHub. Cada tarjeta lleva al repositorio.</p>
   <div class="projects">
-    <a class="proj" href="https://github.com/zullytamayom/Taller_Biblioteca_Final" target="_blank" rel="noopener">
-      <h3>Taller Biblioteca</h3><p>Taller final en Java para gestionar una biblioteca: lógica de negocio y programación orientada a objetos.</p>
-      <div class="meta"><span>Java</span><em>Ver código</em></div></a>
-    <a class="proj" href="https://github.com/zullytamayom/test_frontend" target="_blank" rel="noopener">
-      <h3>Prueba frontend para Panthera</h3><p>Prueba técnica de selección: interfaz web construida a partir de los requisitos de la empresa.</p>
-      <div class="meta"><span>HTML · CSS</span><em>Ver código</em></div></a>
-    <a class="proj" href="https://github.com/zullytamayom/HackathonUAESP" target="_blank" rel="noopener">
-      <h3>Hackathon UAESP</h3><p>Proyecto desarrollado para participar en la hackathon, con trabajo contra reloj y en equipo.</p>
-      <div class="meta"><span>HTML</span><em>Ver código</em></div></a>
-    <a class="proj" href="https://github.com/zullytamayom/blogCafe" target="_blank" rel="noopener">
-      <h3>Blog Café</h3><p>Sitio tipo blog sobre café, maquetado con HTML.</p>
-      <div class="meta"><span>HTML</span><em>Ver código</em></div></a>
+    <!-- Verifica que los href "Ver código" (Historias de Café y Starbound) abran el repo correcto -->
+    <div class="proj feat">
+      <h3>Historias de Café</h3>
+      <p>E-commerce de café de origen que conecta a productores colombianos con el mercado global. Lideré el desarrollo técnico: cada producto cuenta su origen, variedad y proceso, con catálogo, registro de usuarios, carrusel destacado y videos de producto. Desplegado en la nube.</p>
+      <div class="meta"><span>E-commerce · Liderazgo técnico · Frontend</span></div>
+      <div class="acts" style="margin-top:14px">
+        <a href="https://historiasdecafe.github.io/e_commerce_historias_de_cafe/pages/home/home.html" target="_blank" rel="noopener">Ver demo en vivo</a>
+        <a href="https://github.com/historiasdecafe/e_commerce_historias_de_cafe" target="_blank" rel="noopener">Ver código</a>
+      </div>
+    </div>
+    <div class="proj">
+      <h3>Starbound (Hackathon)</h3>
+      <p>Tienda virtual de viajes intergalácticos hecha en equipo de cuatro durante una hackathon: catálogo con carrito de compras, Bootstrap en el frontend y la API de la NASA para mostrar la imagen astronómica del día.</p>
+      <div class="meta"><span>Bootstrap · API de la NASA · Equipo de 4</span></div>
+      <div class="acts" style="margin-top:14px">
+        <a href="https://zullytamayom.github.io/ViajeEspacial/" target="_blank" rel="noopener">Ver demo en vivo</a>
+        <a href="https://github.com/zullytamayom/ViajeEspacial" target="_blank" rel="noopener">Ver código</a>
+      </div>
+    </div>
+    <div class="proj">
+      <h3>Biblioteca</h3>
+      <p>Taller final en Java para gestionar una biblioteca: lógica de negocio y programación orientada a objetos.</p>
+      <div class="meta"><span>Java</span></div>
+      <div class="acts" style="margin-top:14px"><a href="https://github.com/zullytamayom/Taller_Biblioteca_Final" target="_blank" rel="noopener">Ver código</a></div>
+    </div>
+    <div class="proj">
+      <h3>App Mascotas</h3>
+      <p>Aplicación web sobre mascotas, en desarrollo. Estoy integrándola con su backend y preparando el despliegue.</p>
+      <div class="meta"><span>En desarrollo</span></div>
+      <div class="meta"><span>Java -Angular</span></div>
+      <div class="acts" style="margin-top:14px"><a href="https://github.com/zullytamayom/AppMascotas" target="_blank" rel="noopener">Ver código</a></div>
+    </div>
   </div>
 </div></section>
 
