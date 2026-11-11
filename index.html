@@ -1,204 +1,306 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zully Tamayo | Software Engineer</title>
-  <link rel="icon" type="image/x-icon" href="/Zully_Tamayo_Portfolio/assets/icon.jpeg">
-  <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zully Tamayo | Desarrolladora Backend / Full Stack</title>
+<meta name="description" content="Ingeniera informática y desarrolladora Backend / Full Stack. Microservicios en Go, Java, Spring Boot, Angular y AWS.">
+<link rel="icon" href="assets/icon.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F8; --surface:#fff; --ink:#0B1B2E; --muted:#51607A; --line:#D9DEE8;
+  --blue:#2447F5; --green:#0F9D7A; --amber:#E8A317; --night:#0B1B2E;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;margin-bottom:12px}
+.lede{color:var(--muted);max-width:60ch;margin-bottom:40px}
+section{padding:88px 0;border-top:1px solid var(--line)}
 
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(242,244,248,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none}
+.links{display:flex;gap:26px;align-items:center;font-size:.95rem}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+.links .cta{background:var(--ink);color:#fff;padding:8px 16px;border-radius:8px}
+.links .cta:hover{background:var(--blue);color:#fff}
+@media(max-width:720px){.links a:not(.cta){display:none}}
+
+/* hero */
+.hero{padding:72px 0 88px;border:0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted);margin-bottom:22px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(15,157,122,.18)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;margin-bottom:22px}
+.hero p.sub{font-size:1.2rem;color:var(--muted);max-width:52ch;margin-bottom:32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:10px;border:1.5px solid var(--ink);transition:background .2s,color .2s}
+.btn.p{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.p:hover{background:var(--ink);border-color:var(--ink)}
+.btn.s:hover{background:var(--ink);color:#fff}
+
+/* trace card: el momento memorable */
+.trace{background:var(--night);color:#E7ECF5;border-radius:16px;padding:22px 22px 18px;box-shadow:0 30px 60px -30px rgba(11,27,46,.55);font-family:var(--mono);font-size:.78rem}
+.trace-h{display:flex;justify-content:space-between;gap:12px;margin-bottom:16px;color:#9FB0CC}
+.trace-h b{color:#fff;font-weight:500}
+.ok{color:#4ADE9C}
+.row{display:grid;grid-template-columns:118px 1fr 52px;gap:10px;align-items:center;padding:7px 0;border-top:1px solid rgba(255,255,255,.07)}
+.row span:last-child{text-align:right;color:#9FB0CC}
+.lane{position:relative;height:14px;background:rgba(255,255,255,.05);border-radius:4px}
+.bar{position:absolute;top:0;bottom:0;left:var(--l);width:var(--w);background:var(--c,#6F8BFF);border-radius:4px;transform-origin:left;animation:grow .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d)}
+@keyframes grow{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+.trace-f{margin-top:14px;color:#7F91AE;font-size:.72rem}
+
+/* métricas */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.metric{padding:28px;border-right:1px solid var(--line)}
+.metric:last-child{border:0}
+.metric strong{display:block;font-family:var(--display);font-size:2.4rem;font-weight:800;color:var(--blue);line-height:1}
+.metric p{margin-top:10px;color:var(--muted);font-size:.97rem}
+@media(max-width:760px){.metrics{grid-template-columns:1fr}.metric{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* sobre mí */
+.about{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+.photo{width:240px;height:240px;border-radius:20px;background:var(--ink) center/cover;display:grid;place-items:center;color:#fff;font:800 3.4rem var(--display);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.about p+p{margin-top:16px}
+.about p{max-width:66ch;color:#26364D}
+@media(max-width:760px){.about{grid-template-columns:1fr}.photo{width:160px;height:160px}}
+
+/* experiencia */
+.job{display:grid;grid-template-columns:170px 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{font-family:var(--mono);font-size:.82rem;color:var(--muted);padding-top:6px}
+.job h3{font-size:1.4rem;font-weight:800}
+.job .co{color:var(--blue);font-weight:600;margin:4px 0 12px}
+.job ul{list-style:none;display:grid;gap:8px;max-width:70ch}
+.job li{padding-left:20px;position:relative;color:#26364D}
+.job li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--blue)}
+@media(max-width:700px){.job{grid-template-columns:1fr;gap:6px}}
+
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grp{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.grp h3{font-size:1.05rem;font-weight:800;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:.88rem;padding:4px 11px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.grp.main{border-color:var(--blue);box-shadow:inset 0 3px 0 var(--blue)}
+@media(max-width:900px){.stack{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stack{grid-template-columns:1fr}}
+
+/* certificaciones */
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.cert{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.cert b{font-weight:600}
+.cert small{display:block;color:var(--muted);font-size:.88rem}
+.st{font-family:var(--mono);font-size:.76rem;white-space:nowrap;padding:3px 10px;border-radius:6px}
+.st.done{background:#DDF4EC;color:#0A6E55}
+.st.wip{background:#FBEFD2;color:#8A5E00}
+@media(max-width:760px){.certs{grid-template-columns:1fr}}
+
+/* proyectos */
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.proj{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;text-decoration:none;transition:border-color .2s,transform .2s}
+.proj:hover{border-color:var(--blue);transform:translateY(-3px)}
+.proj h3{font-size:1.3rem;font-weight:800;margin-bottom:8px}
+.proj p{color:var(--muted);flex:1;margin-bottom:18px}
+.proj .meta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.proj .meta em{font-style:normal;color:var(--blue)}
+@media(max-width:700px){.projects{grid-template-columns:1fr}}
+
+/* contacto */
+.contact{background:var(--night);color:#fff;border:0}
+.contact h2{font-size:clamp(2rem,4.6vw,3.4rem);max-width:18ch}
+.contact .lede{color:#A9B8D1}
+.mail{display:inline-block;font:800 clamp(1.3rem,3vw,2rem) var(--display);text-decoration:none;border-bottom:3px solid var(--blue);padding-bottom:4px;margin-bottom:36px;word-break:break-all}
+.mail:hover{color:#8FA5FF}
+.socials{display:flex;flex-wrap:wrap;gap:12px}
+.socials a{text-decoration:none;padding:11px 20px;border:1.5px solid rgba(255,255,255,.3);border-radius:10px;font-weight:500}
+.socials a:hover{background:#fff;color:var(--ink)}
+footer{background:var(--night);color:#7F91AE;font-size:.85rem;padding:0 0 32px}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
 <body>
 
-  <!-- Navbar Minimalista -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Zully Tamayo<span class="dot">.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Evolución</a></li>
-          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link btn-contact ms-lg-3" href="#contacto">Hablemos</a></li>
-        </ul>
-      </div>
+<nav><div class="wrap">
+  <a class="brand" href="#top">Zully Tamayo</a>
+  <div class="links">
+    <a href="#experiencia">Experiencia</a>
+    <a href="#stack">Stack</a>
+    <a href="#certificaciones">Certificaciones</a>
+    <a href="#proyectos">Proyectos</a>
+    <a class="cta" href="#contacto">Contáctame</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <p class="status"><i></i>Disponible para nuevos retos en Bogotá, híbrido o remoto</p>
+    <h1>Software backend que aguanta tráfico real.</h1>
+    <p class="sub">Soy ingeniera informática y desarrolladora Backend / Full Stack. En Mercado Libre ayudé a pasar un monolito a microservicios en Go. Hoy sumo Java, Spring Boot, Angular y certificaciones en AWS y Azure.</p>
+    <div class="btns">
+      <a class="btn p" href="#proyectos">Ver proyectos</a>
+      <a class="btn s" href="assets/CV_Zully_Tamayo.pdf" download>Descargar CV</a>
+      <a class="btn s" href="https://github.com/zullytamayom" target="_blank" rel="noopener">GitHub</a>
     </div>
-  </nav>
+  </div>
 
-  <header class="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 text-start">
-          <h2 class="h6 text-primary text-uppercase fw-bold mb-3 tracking-widest">Disponible para nuevos retos</h2>
-          <h1 class="display-2 fw-extrabold mb-3">Zully Tamayo</h1>
-          <h2 class="h3 fw-light opacity-75 mb-4">Ingeniera de Software :  <span class="text-gradient">Desarrolladora FullStack</span>.</h2>
-          <p class="lead mb-5 max-w-500">Transformo ideas complejas en arquitecturas robustas y escalables utilizando
-            Java, Go , JS, CSS, HTML, Python.</p>
-          <div class="d-flex gap-3">
-            <a href="#proyectos" class="btn btn-main">Explorar Trabajo</a>
-            <a href="https://github.com/ZullyTamayoM" target="_blank" class="btn btn-outline-light"><i
-                class="bi bi-github"></i> GitHub</a>
-          </div>
-        </div>
-        <div class="col-lg-5 text-center mt-5 mt-lg-0">
-          <div class="profile-container">
-            <img src="assets/fotoZully.png" alt="Zully Tamayo" class="img-fluid profile-img shadow-lg" />
-          </div>
-        </div>
-      </div>
+  <figure class="trace" role="img" aria-label="Ejemplo ilustrativo de una traza de petición a través de varios microservicios">
+    <div class="trace-h"><b>POST /v1/payments</b><span><span class="ok">200 OK</span> · 184 ms</span></div>
+    <div class="row"><span>api-gateway</span><div class="lane"><div class="bar" style="--l:0%;--w:100%;--c:#4B5D7D;--d:.2s"></div></div><span>184ms</span></div>
+    <div class="row"><span>auth-svc</span><div class="lane"><div class="bar" style="--l:4%;--w:14%;--c:#6F8BFF;--d:.5s"></div></div><span>26ms</span></div>
+    <div class="row"><span>payments-go</span><div class="lane"><div class="bar" style="--l:20%;--w:62%;--c:#2447F5;--d:.8s"></div></div><span>114ms</span></div>
+    <div class="row"><span>ledger-db</span><div class="lane"><div class="bar" style="--l:30%;--w:30%;--c:#4ADE9C;--d:1.1s"></div></div><span>55ms</span></div>
+    <div class="row"><span>event-bus</span><div class="lane"><div class="bar" style="--l:72%;--w:14%;--c:#E8A317;--d:1.4s"></div></div><span>25ms</span></div>
+    <figcaption class="trace-f">Traza ilustrativa del tipo de sistemas en los que he trabajado: APIs REST, bases de datos y mensajería.</figcaption>
+  </figure>
+</div></header>
+
+<section style="padding-top:0;border:0"><div class="wrap">
+  <div class="metrics">
+    <div class="metric"><strong>+30%</strong><p>escalabilidad y disponibilidad reportadas al migrar un monolito a microservicios en Go.</p></div>
+    <div class="metric"><strong>-15%</strong><p>en tiempos de respuesta reportados, con APIs REST y pipelines de CI/CD.</p></div>
+    <div class="metric"><strong>-25%</strong><p>en tiempos de entrega reportados al usar IA como apoyo para pruebas, refactor y documentación.</p></div>
+  </div>
+</div></section>
+
+<section id="sobre-mi"><div class="wrap about">
+  <div class="photo"><img src="assets/fotoZully.png" alt="Zully Tamayo" onerror="this.remove();this.parentNode.textContent='ZT'"></div>
+  <div>
+    <h2>Construyo para que escale y se pueda mantener</h2>
+    <p>Empecé con curiosidad por entender cómo funcionan los sistemas grandes. Pasé por Mercado Libre, donde diseñé APIs REST de alta concurrencia, trabajé con despliegues automatizados sobre AWS y vigilé latencia y salud de los servicios.</p>
+    <p>Antes automaticé pipelines de datos en Equitel (Python, S3, Glue, Aurora, Looker Studio) y desarrollé en Java y Angular en Teradata. Desde noviembre de 2025 me preparo para mi siguiente rol: completé Generation Colombia (Full Stack) y AWS re/Start, y aprobé AZ-900 y AWS Cloud Practitioner.</p>
+    <p>Trabajo en equipo con SCRUM y Jira, y aprendo rápido. Inglés B1, con ganas de seguir mejorándolo.</p>
+  </div>
+</div></section>
+
+<section id="experiencia"><div class="wrap">
+  <h2>Experiencia</h2>
+  <p class="lede">Cuatro años en producto, datos e infraestructura, de startups a una de las mayores plataformas de Latinoamérica.</p>
+
+  <article class="job">
+    <div class="when">Nov 2024 – Oct 2025</div>
+    <div>
+      <h3>Desarrolladora Backend</h3><p class="co">Mercado Libre · Bogotá</p>
+      <ul>
+        <li>Participé en la migración de un monolito a microservicios en Golang, con +30% reportado en escalabilidad y disponibilidad.</li>
+        <li>Diseñé e implementé APIs REST en entornos de alta concurrencia, con CI/CD y -15% reportado en tiempos de respuesta.</li>
+        <li>Integré microservicios con bases de datos administradas y mensajería, y monitoreé latencia y rendimiento en un entorno de alto tráfico.</li>
+        <li>Usé Cursor, Windsurf y GitHub Copilot en refactor, pruebas unitarias y documentación.</li>
+      </ul>
     </div>
-  </header>
+  </article>
 
-  <section id="sobre-mi" class="section-padding">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-          <h2 class="display-5 fw-bold mb-4">Trayectoria <span class="text-gradient">E Impacto</span></h2>
-          <p class="lead text-primary fw-bold">Ingeniera Informática & Full Stack Developer</p>
-          <p class="opacity-75">
-            Mi enfoque profesional se centra en resolver problemas complejos mediante tecnología de vanguardia. En el
-            sector <strong>Fintech (Mercado Libre)</strong>, hice parte del desacople de arquitecturas monolíticas hacia
-            microservicios en <strong>Golang</strong>, implementando despliegues con <em>Bluebird</em> para garantizar
-            servicios de alta disponibilidad y concurrencia.
-          </p>
-          <p class="opacity-75">
-            Soy una apasionada de la eficiencia operativa. En <strong>Equitel</strong>, automaticé la extracción de
-            datos críticos mediante <strong>scripts en Python</strong> y diseñé arquitecturas en
-            <strong>PostgreSQL</strong> que eliminaron procesos manuales, transformando datos en decisiones estratégicas
-            a través de dashboards dinámicos.
-          </p>
-          <p class="opacity-75">
-            Actualmente, potencio mi perfil como desarrollador Fullstack, integrando metodologías ágiles
-            y las mejores prácticas de desarrollo en JS, Java/Spring Boot para entregar productos digitales que no solo
-            funcionen, sino que escalen globalmente.
-          </p>
-
-          <!-- CV -->
-          <div class="mt-5">
-            <a href="assets/CV_Zully_Tamayo.pdf" download class="btn-cv">
-              <i class="bi bi-file-earmark-pdf-fill"></i>
-              Descargar CV
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="glass-card p-4">
-            <div class="row g-3">
-              <div class="col-12">
-                <div class="experience-item p-3 border-start border-primary border-3 bg-white-5">
-                  <h5 class="fw-bold m-0">Mercado Libre (Fintech)</h5>
-                  <p class="small text-secondary m-0">Backend Junior | Golang - Fury - Bluebird</p>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="experience-item p-3 border-start border-secondary border-3 bg-white-5">
-                  <h5 class="fw-bold m-0">Equitel</h5>
-                  <p class="small text-secondary m-0">Analista de Software | Python - PostgreSQL</p>
-                </div>
-              </div>
-              <div class="col-12 mt-4">
-                <div class="skills-showcase">
-                  <span class="badge bg-dark border border-primary p-2 m-1">High Concurrency</span>
-                  <span class="badge bg-dark border border-primary p-2 m-1">Microservices</span>
-                  <span class="badge bg-dark border border-primary p-2 m-1">API REST</span>
-                  <span class="badge bg-dark border border-primary p-2 m-1">Cloud (AWS)</span>
-                  <span class="badge bg-dark border border-primary p-2 m-1">SCRUM</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <article class="job">
+    <div class="when">May 2022 – Dic 2022</div>
+    <div>
+      <h3>Analista de Software</h3><p class="co">Equitel · Bogotá</p>
+      <ul>
+        <li>Automaticé con Python pipelines de datos de HubSpot a bases de datos relacionales.</li>
+        <li>Reemplacé cargas manuales por un pipeline con Amazon S3, AWS Glue y Aurora.</li>
+        <li>Construí dashboards en Looker Studio para KPI, y eliminé errores de digitación manual en Excel.</li>
+      </ul>
     </div>
-  </section>
+  </article>
 
-  <section id="proyectos" class="section-padding bg-black-soft">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold">Proyectos Destacados</h2>
-        <p class="opacity-50">Una selección de mis trabajos más recientes en desarrollo web y backend.</p>
-      </div>
-      <div class="row g-4" id="lista-proyectos">
-      </div>
+  <article class="job">
+    <div class="when">Nov 2021 – Mar 2022</div>
+    <div>
+      <h3>Desarrolladora Full Stack</h3><p class="co">Teradata · Bogotá</p>
+      <ul>
+        <li>Entregué mejoras end-to-end con Java en el backend y Angular en la interfaz.</li>
+        <li>Corregí errores y mantuve módulos en producción.</li>
+      </ul>
     </div>
-  </section>
-  <section id="reflexion" class="section-padding">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="glass-card p-5 border-gradient">
-                    <h2 class="display-5 fw-bold mb-4 text-center">
-                        Reflexión de mi camino como <span class="text-gradient">Desarrolladora Fullstack</span>
-                    </h2>
-                    
-                    <div class="reflection-content">
-                        <p class="lead opacity-75 mb-4">
-                            Mi viaje en el desarrollo de software comenzó con la curiosidad de entender cómo funcionan los sistemas a gran escala. Hoy, tras pasar por ecosistemas de alta exigencia como <strong>Mercado Libre</strong> con Golang, entiendo que el aprendizaje nunca termina, y menos en la industria IT, que los retos llegan día a día y no se trata solo de escribir código, sino de cohesionar cada parte de un sistema para que sea robusto, escalable y resistente a las exigencias del mercado.
+  </article>
 
-                        </p>
-
-                        <div class="row g-4 mt-2">
-                            <!-- Áreas de Mejora -->
-                            <div class="col-md-6">
-                                <div class="p-4 rounded-4 bg-white-5 h-100">
-                                    <h4 class="text-secondary"><i class="bi bi-graph-up-arrow"></i> Áreas de Mejora</h4>
-                                    <ul class="list-unstyled opacity-75 mt-3">
-                                        <li><i class="bi bi-check2-circle text-primary"></i> Profundizar en patrones de diseño avanzados en arquitecturas distribuidas.</li>
-                                        <li><i class="bi bi-check2-circle text-primary"></i> Optimización de consultas complejas en bases de datos NoSQL.</li>
-                                        <li><i class="bi bi-check2-circle text-primary"></i> Liderazgo técnico bajo metodologías ágiles de alto rendimiento.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Metas -->
-                            <div class="col-md-6">
-                                <div class="p-4 rounded-4 bg-white-5 h-100">
-                                    <h4 class="text-primary"><i class="bi bi-flag"></i> Metas Profesionales</h4>
-                                    <p class="small fw-bold mb-1 mt-3">CORTO PLAZO (1 AÑO):</p>
-                                    <p class="small opacity-75">Obtener la certificación AWS Certified Developer y dominar la concurrencia avanzada en Golang/Java.</p>
-                                    
-                                    <p class="small fw-bold mb-1 mt-3">LARGO PLAZO (3-5 AÑOS):</p>
-                                    <p class="small opacity-75">Convertirme en Software Architect, liderando la transformación digital de sistemas críticos a nivel regional.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <article class="job">
+    <div class="when">May 2021 – Sep 2021</div>
+    <div>
+      <h3>Desarrolladora de Software</h3><p class="co">Minos IT · Bogotá</p>
+      <ul>
+        <li>Participé en el ciclo completo de desarrollo, con 95% reportado de entregas completadas dentro de los sprints.</li>
+        <li>Apoyé el diseño de bases de datos relacionales normalizadas y resolví errores de lógica de negocio.</li>
+      </ul>
     </div>
-</section>
+  </article>
+</div></section>
 
-  <footer id="contacto" class="section-padding">
-    <div class="container text-center">
-      <h2 class="display-4 fw-bold mb-5">¿Tienes un proyecto en mente?</h2>
-      <a href="mailto:tuemail@ejemplo.com" class="email-link mb-5 d-block">zullytamayom@gmail.com</a>
-      <div class="d-flex justify-content-center gap-4 fs-3 mb-5">
-        <a href="https://www.linkedin.com/in/zully-tamayo-martinez-softwaredeveloper/" class="text-white hover-up"><i
-            class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/ZullyTamayoM" class="text-white hover-up"><i class="bi bi-github"></i></a>
+<section id="stack"><div class="wrap">
+  <h2>Stack técnico</h2>
+  <p class="lede">Lo que uso a diario aparece primero. El resto es lo que he trabajado y sigo practicando.</p>
+  <div class="stack">
+    <div class="grp main"><h3>Backend</h3><div class="tags"><span>Golang</span><span>Java</span><span>Spring Boot</span><span>Python</span><span>APIs REST</span><span>Microservicios</span></div></div>
+    <div class="grp"><h3>Frontend</h3><div class="tags"><span>Angular</span><span>React</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Bootstrap</span></div></div>
+    <div class="grp"><h3>Cloud y DevOps</h3><div class="tags"><span>AWS: EC2, S3, RDS, Glue, Aurora</span><span>Azure</span><span>Docker</span><span>CI/CD</span><span>Git</span></div></div>
+    <div class="grp"><h3>Bases de datos y datos</h3><div class="tags"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Aurora</span><span>ETL</span><span>Looker Studio</span></div></div>
+    <div class="grp"><h3>IA para desarrollo</h3><div class="tags"><span>Cursor</span><span>Windsurf</span><span>GitHub Copilot</span><span>Kiro</span><span>IA Studio</span></div></div>
+    <div class="grp"><h3>Metodología</h3><div class="tags"><span>SCRUM</span><span>Jira</span><span>Trabajo en equipo</span><span>Inglés B1</span></div></div>
+  </div>
+</div></section>
 
-        <a href="https://wa.me/573175954140?text=Hola%20Zully,%20vi%20tu%20portafolio%20y%20me%20gustaría%20contactarte."
-          target="_blank" class="text-white hover-whatsapp">
-          <i class="bi bi-whatsapp"></i>
-        </a>
-      </div>
-      <p class="small opacity-50">&copy; 2026 Zully Tamayo Martinez. Desarrollado con pasión y código limpio.</p>
-    </div>
-  </footer>
+<section id="certificaciones"><div class="wrap">
+  <h2>Certificaciones y formación</h2>
+  <p class="lede">Un año de estudio enfocado en cloud y Full Stack, con resultados verificables.</p>
+  <div class="certs">
+    <div class="cert"><div><b>AWS Certified Cloud Practitioner</b><small>Amazon Web Services · Oct 2026</small></div><span class="st done">Aprobada</span></div>
+    <div class="cert"><div><b>Microsoft Azure Fundamentals (AZ-900)</b><small>Microsoft · Sep 2026</small></div><span class="st done">Aprobada</span></div>
+    <div class="cert"><div><b>Programa AWS re/Start</b><small>Bootcamp Institute · Colsubsidio · Jun – Sep 2026</small></div><span class="st done">Completado</span></div>
+    <div class="cert"><div><b>Desarrollador Full Stack</b><small>Generation Colombia · Feb – Jun 2026</small></div><span class="st done">Completado</span></div>
+    <div class="cert"><div><b>Especialista en Angular</b><small>Tecylab · Oct 2026</small></div><span class="st done">Terminada</span></div>
+    <div class="cert"><div><b>Especialista en Spring Boot Multicloud</b><small>Tecylab</small></div><span class="st wip">En curso</span></div>
+    <div class="cert"><div><b>Certificación MongoDB en español</b><small>MongoDB</small></div><span class="st wip">En curso</span></div>
+    <div class="cert"><div><b>Ingeniería Informática</b><small>UNIR · 2020 – 2024</small></div><span class="st done">Título</span></div>
+  </div>
+</div></section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+<section id="proyectos"><div class="wrap">
+  <h2>Proyectos</h2>
+  <p class="lede">Una selección de mi GitHub. Cada tarjeta lleva al repositorio.</p>
+  <div class="projects">
+    <a class="proj" href="https://github.com/zullytamayom/Taller_Biblioteca_Final" target="_blank" rel="noopener">
+      <h3>Taller Biblioteca</h3><p>Taller final en Java para gestionar una biblioteca: lógica de negocio y programación orientada a objetos.</p>
+      <div class="meta"><span>Java</span><em>Ver código</em></div></a>
+    <a class="proj" href="https://github.com/zullytamayom/test_frontend" target="_blank" rel="noopener">
+      <h3>Prueba frontend para Panthera</h3><p>Prueba técnica de selección: interfaz web construida a partir de los requisitos de la empresa.</p>
+      <div class="meta"><span>HTML · CSS</span><em>Ver código</em></div></a>
+    <a class="proj" href="https://github.com/zullytamayom/HackathonUAESP" target="_blank" rel="noopener">
+      <h3>Hackathon UAESP</h3><p>Proyecto desarrollado para participar en la hackathon, con trabajo contra reloj y en equipo.</p>
+      <div class="meta"><span>HTML</span><em>Ver código</em></div></a>
+    <a class="proj" href="https://github.com/zullytamayom/blogCafe" target="_blank" rel="noopener">
+      <h3>Blog Café</h3><p>Sitio tipo blog sobre café, maquetado con HTML.</p>
+      <div class="meta"><span>HTML</span><em>Ver código</em></div></a>
+  </div>
+</div></section>
+
+<section class="contact" id="contacto"><div class="wrap">
+  <h2>¿Tienes un reto de backend o Full Stack?</h2>
+  <p class="lede">Estoy disponible para nuevas oportunidades. Escríbeme y te respondo pronto.</p>
+  <a class="mail" href="mailto:zullytamayom@gmail.com">zullytamayom@gmail.com</a>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/zully-tamayo-martinez-softwaredeveloper/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/zullytamayom" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://wa.me/573175954140?text=Hola%20Zully,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" rel="noopener">WhatsApp</a>
+    <a href="assets/CV_Zully_Tamayo.pdf" download>Descargar CV</a>
+  </div>
+</div></section>
+<footer><div class="wrap">© 2026 Zully Tamayo Martínez · Bogotá, Colombia</div></footer>
+
 </body>
-
 </html>
